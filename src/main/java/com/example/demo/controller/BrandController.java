@@ -19,12 +19,4 @@ public class BrandController {
     @PutMapping("{brandId}")
     @ApiOperation("修改品牌信息")
     public Object updateBrand(){return new Object();}
-
-    @DeleteMapping("{brandId}/goods")
-    @ApiOperation("删除指定品牌下的商品")
-    public Object deleteGoodsOfSpecifiedBrand(){return new Object();}
-
-    @PutMapping("{brandId}/goods")
-    @ApiOperation("修改指定品牌下的商品信息")
-    public Object updateGoodsOfSpecifiedBrand(){return new Object();}
 }

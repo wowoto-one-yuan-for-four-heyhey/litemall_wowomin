@@ -4,7 +4,7 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.web.bind.annotation.*;
 
-@Api(value="分享controller",tags={"管理员操作接口"})
+@Api(value="分享controller",tags={"分享管理"})
 @RestController
 @RequestMapping("")
 public class ShareController {

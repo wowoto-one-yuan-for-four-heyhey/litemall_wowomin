@@ -12,6 +12,7 @@ public class ShareController {
     /*
      * 分享规则管理
      */
+
     @GetMapping("shareRules")
     @ApiOperation("查看所有分享活动规则")
     public Object getAllShareRules(){ return new Object(); }

@@ -20,10 +20,6 @@ public class BrandController {
     @ApiOperation("修改品牌信息")
     public Object updateBrand(){return new Object();}
 
-    @PostMapping("{brandId}/goods")
-    @ApiOperation("添加指定品牌下的商品")
-    public Object addGoodsOfSpecifiedBrand(){return new Object();}
-
     @DeleteMapping("{brandId}/goods")
     @ApiOperation("删除指定品牌下的商品")
     public Object deleteGoodsOfSpecifiedBrand(){return new Object();}

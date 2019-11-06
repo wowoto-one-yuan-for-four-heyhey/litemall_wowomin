@@ -12,23 +12,23 @@ public class GoodsController {
     @ApiOperation(value = "添加商品")
     public Object addGoods(){ return new Object(); }
 
-    @DeleteMapping("goods/{id}")
+    @DeleteMapping("goods/{goodsId}")
     @ApiOperation(value = "删除商品")
     public Object deleteGoods(){ return new Object(); }
 
-    @PutMapping("goods/{id}")
+    @PutMapping("goods/{goodsId}")
     @ApiOperation(value = "修改商品信息")
     public Object updateGoods(){ return new Object(); }
 
-    @PostMapping("goods/{id}/specifications")
+    @PostMapping("goods/{goodsId}/specifications")
     @ApiOperation(value = "添加商品规格")
     public Object addSpecification(){ return new Object(); }
 
-    @DeleteMapping("goods/{id}/specifications/{specificationId}")
+    @DeleteMapping("goods/{goodsId}/specifications/{specificationId}")
     @ApiOperation(value = "删除商品规格")
     public Object deleteSpecification(){ return new Object(); }
 
-    @PutMapping("goods/{id}/specifications/{specificationId}")
+    @PutMapping("goods/{goodsId}/specifications/{specificationId}")
     @ApiOperation(value = "修改商品规格信息")
     public Object updateSpecification(){ return new Object(); }
 
@@ -36,11 +36,11 @@ public class GoodsController {
     @ApiOperation(value = "添加预售商品")
     public Object addPreSaleGoods(){ return new Object(); }
 
-    @DeleteMapping("pre-sale-goods/{id}")
+    @DeleteMapping("pre-sale-goods/{goodsId}")
     @ApiOperation(value = "删除预售商品")
     public Object deletePreSaleGoods(){ return new Object(); }
 
-    @PutMapping("pre-sale-goods/{id}")
+    @PutMapping("pre-sale-goods/{goodsId}")
     @ApiOperation(value = "修改预售商品信息")
     public Object updatePreSaleGoods(){ return new Object(); }
 
@@ -48,11 +48,11 @@ public class GoodsController {
     @ApiOperation(value = "添加团购商品")
     public Object addGrouponGoods(){ return new Object(); }
 
-    @DeleteMapping("groupon-goods/{id}")
+    @DeleteMapping("groupon-goods/{goodsId}")
     @ApiOperation(value = "删除团购商品")
     public Object deleteGrouponGoods(){ return new Object(); }
 
-    @PutMapping("groupon-goods/{id}")
+    @PutMapping("groupon-goods/{goodsId}")
     @ApiOperation(value = "修改团购商品信息")
     public Object updateGrouponGoods(){ return new Object(); }
 

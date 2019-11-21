@@ -90,7 +90,7 @@ public class UserService {
      * 分享返点
      */
     @PutMapping("user/{userId}/rebate")
-    @ApiOperation("增加用户的返点")
+    @ApiOperation("增加用户的返点(内部接口，给 ShareService 访问)")
     public Object addRebate(@ApiParam(name="rebate",value="返点值",required=true)
                                 @PathVariable("rebate") int rebate,
                             @ApiParam(name="userId",value="用户Id")String userId){ return new Object();}

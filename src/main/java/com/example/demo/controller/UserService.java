@@ -47,6 +47,7 @@ public class UserService {
     public Object deleteCollection(@ApiParam(name="collectionId",value="收藏ID",required=true)
                                        @PathVariable("collectionId") String collectionId){ return new Object(); }
 
+
     /*
      * 足迹
      */
@@ -65,6 +66,8 @@ public class UserService {
     @ApiOperation("删除所有足迹")
     public Object deletePrints(){ return new Object();}
 
+
+
     /*
      * 购物车
      */
@@ -81,9 +84,13 @@ public class UserService {
     public Object getCartItem(@ApiParam(name="cartItemId",value="购物车商品ID",required=true)
                                   @PathVariable("cartItemId") String cartItemId){ return new Object();}
 
-    @PostMapping("cart-items/{product}")
-    @ApiOperation("查看购物车商品")
-    public Object getProduct(@ApiParam(name="product",value="商品",required=true)
-                          @PathVariable("product") String product){ return new Object(); }
+
+    /*
+     * 分享返点
+     */
+    @PutMapping("rebate")
+    @ApiOperation("增加用户的返点")
+    public Object addRebate(@ApiParam(name="rebate",value="返点值",required=true)
+                                @PathVariable("rebate") int rebate){ return new Object();}
 
 }

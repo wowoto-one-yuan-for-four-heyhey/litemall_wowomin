@@ -6,8 +6,7 @@ import io.swagger.annotations.ApiParam;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
-
-@Api(tags = "广告微服务")
+@Api(value="AdService",tags={"广告微服务"})
 @RestController
 public class AdService {
 
@@ -45,7 +44,7 @@ public class AdService {
     @PutMapping("ads/{id}")
     @ApiOperation("修改广告信息(管理员)")
     public Object updateAds(@ApiParam(name="id",value="广告ID",required=true)  @PathVariable("id") String id,
-                            @ApiParam(name="ad",value="广告信息") Object ad)
+                            @ApiParam(name="ad",value="广告信息")Object ad)
     {return new Object(); }
 
 }

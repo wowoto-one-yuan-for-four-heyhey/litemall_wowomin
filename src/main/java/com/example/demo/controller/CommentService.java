@@ -6,8 +6,7 @@ import io.swagger.annotations.ApiParam;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
-
-@Api(tags = "评论微服务")
+@Api(value="CommentService",tags={"评论微服务"})
 @RestController
 public class CommentService {
 

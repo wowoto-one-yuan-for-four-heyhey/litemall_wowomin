@@ -26,7 +26,7 @@ public class TopicService {
 
 
     /*
-     * 话题操作
+     * 专题操作
      */
 
     @PostMapping("topics/search")

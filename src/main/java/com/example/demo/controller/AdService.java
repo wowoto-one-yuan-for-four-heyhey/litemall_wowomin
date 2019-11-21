@@ -18,12 +18,16 @@ public class AdService {
 
     @GetMapping("ads")
     @ApiOperation("查看所有广告信息(管理员)")
-    public ArrayList<Object> getAllAds(){ return new ArrayList<>(); }
+    public ArrayList<Object> getAllAds(@ApiParam(name="num",value="每页展示数量",required=true) int num,
+                                       @ApiParam(name="page",value="页码",required=true) int page)
+    { return new ArrayList<>(); }
 
     @GetMapping("ads/search")
     @ApiOperation("搜索广告信息(管理员)")
     public ArrayList<Object> searchAds(@ApiParam(name="title",value="广告标题")String title,
-                                       @ApiParam(name="content",value="广告内容")String content)
+                                       @ApiParam(name="content",value="广告内容")String content,
+                                       @ApiParam(name="num",value="每页展示数量",required=true) int num,
+                                       @ApiParam(name="page",value="页码",required=true) int page)
     { return new ArrayList<>(); }
 
     @PostMapping("ads")

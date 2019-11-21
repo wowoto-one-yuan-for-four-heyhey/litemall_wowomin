@@ -14,19 +14,27 @@ public class CommentService {
 
     @PostMapping("goods/{id}/comments")
     @ApiOperation("添加特定商品评论")
-    public Object addComment(@ApiParam(name="id",value="商品id",required=true)@PathVariable("id")String id){return new Object();}
+    public Object addComment(@ApiParam(name="id",value="商品id",required=true)@PathVariable("id")String id,
+                             @ApiParam(name="content",value="评论内容",required=true)String content){return new Object();}
 
     @GetMapping("goods/{id}/comments")
     @ApiOperation("查看特定商品评论")
-    public ArrayList<Object> getComment(@ApiParam(name="id",value="商品id",required=true)@PathVariable("id")String id){return new ArrayList<Object>();}
+    public ArrayList<Object> getComment(@ApiParam(name="id",value="商品id",required=true)@PathVariable("id")String id,
+                                        @ApiParam(name="num",value="每页展示数量",required=true) int num,
+                                        @ApiParam(name="page",value="页码",required=true) int page)
+    {return new ArrayList<Object>();}
 
     @GetMapping("topics/{id}/comments")
     @ApiOperation("查看特定专题的评论")
-    public ArrayList<Object> getCommentsByTopicId(@ApiParam(name="id",value="话题id",required=true)@PathVariable("id")String id){ return new ArrayList<Object>(); }
+    public ArrayList<Object> getCommentsByTopicId(@ApiParam(name="id",value="专题id",required=true)@PathVariable("id")String id,
+                                                  @ApiParam(name="num",value="每页展示数量",required=true) int num,
+                                                  @ApiParam(name="page",value="页码",required=true) int page)
+    { return new ArrayList<Object>(); }
 
     @PostMapping("topics/{id}/comments")
     @ApiOperation("添加特定专题的评论")
-    public Object addTopicComment(@ApiParam(name="id",value="话题id",required=true)@PathVariable("id")String id){ return new Object(); }
+    public Object addTopicComment(@ApiParam(name="id",value="专题id",required=true)@PathVariable("id")String id,
+                                  @ApiParam(name="content",value="评论内容",required=true)String content ){ return new Object(); }
 
     @DeleteMapping("topics/{topicId}/comments/{commentId}")
     @ApiOperation("删除该用户对特定专题的特定评论")
@@ -43,12 +51,16 @@ public class CommentService {
       */
      @GetMapping("goods/comments")
      @ApiOperation(value = "查看所有商品评论(管理员)")
-     public ArrayList<Object> getAllGoodsComments(){return new ArrayList<>();}
+     public ArrayList<Object> getAllGoodsComments(@ApiParam(name="num",value="每页展示数量",required=true) int num,
+                                                  @ApiParam(name="page",value="页码",required=true) int page)
+     {return new ArrayList<>();}
 
     @GetMapping("goods/comments/search")
     @ApiOperation(value = "搜索商品评论(管理员)")
     public ArrayList<Object> searchGoodsComments(@ApiParam(name="userId",value="用户ID")  String userId,
-                                                 @ApiParam(name="goodsId",value="商品ID")  String goodsId)
+                                                 @ApiParam(name="goodsId",value="商品ID")  String goodsId,
+                                                 @ApiParam(name="num",value="每页展示数量",required=true) int num,
+                                                 @ApiParam(name="page",value="页码",required=true) int page)
     {return new ArrayList<>();}
 
     @PostMapping("goods/comments/{id}")

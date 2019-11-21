@@ -15,7 +15,6 @@ import java.util.ArrayList;
 @RestController
 public class GoodsService {
 
-
     /*
      * 获得商品
      */

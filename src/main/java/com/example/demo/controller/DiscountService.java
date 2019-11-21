@@ -1,11 +1,14 @@
 package com.example.demo.controller;
 
+import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 
+@Api(tags = "折扣微服务")
+@RestController
 public class DiscountService {
 
     /*
@@ -55,7 +58,5 @@ public class DiscountService {
     @PutMapping("coupon-rules/{id}")
     @ApiOperation("修改优惠券规则信息(管理员)")
     public Object updateCouponRule(@ApiParam(name="id",value="优惠券规则ID",required=true) @PathVariable("id") String id){return new Object(); }
-
-
 
 }

@@ -1,9 +1,12 @@
 package com.example.demo.controller;
 
+import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 import org.springframework.web.bind.annotation.*;
 
+@Api(tags = "用户中心微服务")
+@RestController
 public class UserService {
 
     /*

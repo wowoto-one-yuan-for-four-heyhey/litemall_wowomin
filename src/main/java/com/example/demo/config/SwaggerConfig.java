@@ -28,7 +28,7 @@ public class SwaggerConfig {
 
     private ApiInfo buildApiInf(){
         return new ApiInfoBuilder()
-                .title("轻商城管理员接口")
+                .title("轻商城微服务组件划分")
                 .description("wowoto! one yuan for four! hey hey!")
                 .version("1.0")
                 .build();

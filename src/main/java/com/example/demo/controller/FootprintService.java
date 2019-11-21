@@ -15,7 +15,7 @@ public class FootprintService {
      */
     @GetMapping("footprints")
     @ApiOperation("获得用户的足迹")
-    public ArrayList<Object> getPrints(){ return new ArrayList<Object>(); }
+    public ArrayList<Object> getPrints(){ return new ArrayList<>(); }
     @PostMapping("footprints/{id}")
     @ApiOperation("添加足迹")
     public Object addPrint(@ApiParam(name="id",value="商品ID",required=true) @PathVariable("id") String id){ return new Object(); }

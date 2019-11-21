@@ -92,7 +92,7 @@ public class DiscountService {
     /*
      *内部接口
      */
-    @GetMapping("coupons")
+    @GetMapping("coupons-in")
     @ApiOperation("查看特定优惠券信息(内部接口，给order使用获得用户优惠券信息)")
     public Object getCouponInfoForOrder(@ApiParam(name="id",value="用户id",required=true)  String id)
     { return new Object(); }

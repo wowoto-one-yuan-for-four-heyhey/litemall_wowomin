@@ -40,13 +40,13 @@ public class ShareService {
 
 
     @GetMapping("shareItem")
-    @ApiOperation("查看所有分享(管理员)")
+    @ApiOperation("查看所有分享")
     public ArrayList<Object> getAllShareItems(){
         return null;
     }
 
     @GetMapping("shareItem/{id}")
-    @ApiOperation("查看某个分享(管理员)")
+    @ApiOperation("查看某个分享")
     public Object getShareItem(@ApiParam(name="id",value="分享规则ID")  @PathVariable("id") String shareId){
         return null;
     }

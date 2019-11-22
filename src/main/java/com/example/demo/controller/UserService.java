@@ -5,6 +5,8 @@ import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
+
 @Api(value="UserService",tags = "用户微服务")
 @RestController
 public class UserService {
@@ -68,6 +70,38 @@ public class UserService {
     @ApiOperation("删除购物车中特定物品")
     public Object getCartItem(@ApiParam(name="cartItemId",value="购物车商品ID",required=true)
                                   @PathVariable("cartItemId") String cartItemId){ return new Object();}
+
+
+    /*
+     * 用户信息操作
+     * */
+
+    @GetMapping("users")
+    @ApiOperation("查看所有用户信息(管理员)")
+    public ArrayList<Object> getAllUsersList(){ return new ArrayList<>(); }
+
+    @GetMapping("users/{id}")
+    @ApiOperation("查看特定用户信息(管理员)")
+    public Object getUsersList(@ApiParam(name="id",value="用户ID")  @PathVariable("id") String id){ return new Object(); }
+
+    @GetMapping("users/search")
+    @ApiOperation("搜索用户(管理员)")
+    public ArrayList<Object> searchUsersInfo(@ApiParam(name="userName",value="用户名")  String userName,@ApiParam(name="phone",value="电话号码")  String phone){ return new ArrayList<>(); }
+
+    @PostMapping("users")
+    @ApiOperation("添加用户(管理员)")
+    public Object createUser(@ApiParam(name="user",value="用户信息") Object user){ return new Object(); }
+
+    @DeleteMapping("users/{id}")
+    @ApiOperation("删除用户(管理员)")
+    public boolean deleteUser(@ApiParam(name="id",value="用户ID")  @PathVariable("id") String id){ return true; }
+
+    @PutMapping("users/{userId}")
+    @ApiOperation("修改用户信息(管理员)")
+    public Object updateUserInfo(@ApiParam(name="id",value="用户ID")  @PathVariable("id") String id,@ApiParam(name="user",value="用户信息") Object user){return new Object();  }
+
+
+
 
 
     /*

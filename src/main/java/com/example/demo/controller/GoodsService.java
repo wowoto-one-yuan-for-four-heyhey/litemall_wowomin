@@ -11,33 +11,25 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.ArrayList;
 
 
-@Api(tags = "商品中心微服务")
+@Api(value="GoodsService",tags = "商品微服务")
 @RestController
 public class GoodsService {
 
     /*
      * 获得商品
      */
-    @GetMapping("products/{productId}-in")
+    @GetMapping("products-in/{productId}")
     @ApiOperation("获得特定规格商品(内部接口, 给 OrderSevice , UserService 访问)")
-    public Object getProduct(@ApiParam(name="productId",value="特定规格商品ID",required=true)
+    public Object getProductForOthers(@ApiParam(name="productId",value="特定规格商品ID",required=true)
                                  @PathVariable("productId") String productId){ return new Object();}
 
-    @GetMapping("goods/{goodsId}-in")
+    @GetMapping("goods-in/{goodsId}")
     @ApiOperation("获得商品(内部接口, 给 TopicSevice , FootprintService 访问)")
-    public Object getGoods(@ApiParam(name="goodsId",value="商品ID",required=true)
+    public Object getGoodsForOthers(@ApiParam(name="goodsId",value="商品ID",required=true)
                              @PathVariable("goodsId") String goodsId){ return new Object();}
 
 
 
-
-    @GetMapping("goods/{id}/grouponRule")
-    @ApiOperation(value = "查询特定商品上的团购规则")
-    public Object findGrouponRuleForGoods(@ApiParam(name="id",value="商品ID",required=true) @PathVariable("id") String id){ return new Object(); }
-
-    @GetMapping("goods/{id}/shareRule")
-    @ApiOperation(value = "查询特定商品上的分享规则")
-    public Object findShareRuleForGoods(@ApiParam(name="id",value="商品ID",required=true) @PathVariable("id") String id){ return new Object(); }
 
     /*
      * 商品

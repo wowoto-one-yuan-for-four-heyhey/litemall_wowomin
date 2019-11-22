@@ -5,7 +5,7 @@ import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 import org.springframework.web.bind.annotation.*;
 
-@Api(tags = "用户中心微服务")
+@Api(value="UserService",tags = "用户微服务")
 @RestController
 public class UserService {
 
@@ -50,25 +50,6 @@ public class UserService {
     @ApiOperation("删除收藏")
     public Object deleteCollection(@ApiParam(name="collectionId",value="收藏ID",required=true)
                                        @PathVariable("collectionId") String collectionId){ return new Object(); }
-
-
-    /*
-     * 足迹
-     */
-    @GetMapping("footprints")
-    @ApiOperation("获得特定用户的足迹")
-    public Object getPrints(){ return new Object(); }
-    @PostMapping("footprints/{goodsId}")
-    @ApiOperation("添加足迹")
-    public Object addPrint(@ApiParam(name="goodsId",value="商品ID",required=true)
-                               @PathVariable("goodsId") String goodsId){ return new Object(); }
-    @DeleteMapping("footprints/{fpId}")
-    @ApiOperation("删除特定足迹")
-    public Object deletePrint(@ApiParam(name="fpId",value="足迹ID",required=true)
-                                  @PathVariable("fpId") String fpId){ return new Object(); }
-    @DeleteMapping("footprints")
-    @ApiOperation("删除所有足迹")
-    public Object deletePrints(){ return new Object();}
 
 
 

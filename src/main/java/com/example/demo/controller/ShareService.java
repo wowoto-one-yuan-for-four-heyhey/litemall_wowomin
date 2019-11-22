@@ -18,6 +18,10 @@ public class ShareService {
     @ApiOperation("查看所有分享活动规则(管理员)")
     public ArrayList<Object> getAllShareRules(){ return new ArrayList<>(); }
 
+    @GetMapping("goods/{id}/shareRule")
+    @ApiOperation(value = "查询特定商品上的分享规则")
+    public Object findShareRuleForGoods(@ApiParam(name="id",value="商品ID",required=true) @PathVariable("id") String id){ return new Object(); }
+
     @PostMapping("shareRules")
     @ApiOperation("添加分享活动规则(管理员)")
     public Object addShareRules(@ApiParam(name="shareRule",value="分享规则信息")   Object shareRule){ return new Object(); }

@@ -118,17 +118,22 @@ public class GoodsService {
     @ApiOperation(value = "修改商品信息(管理员)")
     public Object updateGoods(@ApiParam(name="id",value="商品ID",required=true) @PathVariable("id") String id,@ApiParam(name="goods",value="商品信息",required=true)  Object goods){ return new Object(); }
 
-    @PostMapping("goods/{id}/specification/")
-    @ApiOperation(value = "添加商品规格(管理员)")
-    public Object addSpecification(@ApiParam(name="id",value="商品ID",required=true) @PathVariable("id") String id,@ApiParam(name="goodsSpecification",value="商品规格信息",required=true)  Object goodsSpecification){ return new Object(); }
+    @PostMapping("goods/{id}/products/")
+    @ApiOperation(value = "添加特定商品(管理员)")
+    public Object addProducts(@ApiParam(name="id",value="商品ID",required=true) @PathVariable("id") String id,@ApiParam(name="Products",value="商品规格信息",required=true)  Object goodsProducts){ return new Object(); }
 
-    @DeleteMapping("goods/{goodsId}/specification/{specificationId}")
-    @ApiOperation(value = "删除商品规格(管理员)")
-    public Object deleteSpecification(@ApiParam(name="goodsId",value="商品ID",required=true) @PathVariable("goodsId") String goodsId,@ApiParam(name="specificationId",value="商品规格ID",required=true) @PathVariable("specificationId") String specificationId){ return new Object(); }
+    @DeleteMapping("goods/{goodsId}/products/{productsId}")
+    @ApiOperation(value = "删除特定商品(管理员)")
+    public Object deleteProducts(@ApiParam(name="goodsId",value="商品ID",required=true) @PathVariable("goodsId") String goodsId,@ApiParam(name="ProductsId",value="商品规格ID",required=true) @PathVariable("productsId") String productsId){ return new Object(); }
 
-    @PutMapping("goods/{goodsId}/specification/{specificationId}")
-    @ApiOperation(value = "修改商品规格信息(管理员)")
-    public Object updateSpecification(@ApiParam(name="goodsId",value="商品ID",required=true) @PathVariable("goodsId") String goodsId,@ApiParam(name="specificationId",value="商品规格ID",required=true) @PathVariable("specificationId") String specificationId){ return new Object(); }
+    @PutMapping("goods/{goodsId}/products/{productsId}")
+    @ApiOperation(value = "修改特定商品(管理员)")
+    public Object updateProducts(@ApiParam(name="goodsId",value="商品ID",required=true) @PathVariable("goodsId") String goodsId,@ApiParam(name="ProductsId",value="商品规格ID",required=true) @PathVariable("productsId") String productsId){ return new Object(); }
+
+
+
+
+
 
 
 }

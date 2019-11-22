@@ -3,10 +3,7 @@ package com.example.demo.controller;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 
@@ -70,7 +67,68 @@ public class GoodsService {
     public ArrayList<Object> getGoodsBySubcategoryId(@ApiParam(name="id",value="类别id",required=true)@PathVariable("id")String id){return new ArrayList<Object>();}
 
 
+    /*
+     *管理员品牌
+     */
 
+    @PostMapping("brands/search")
+    @ApiOperation("搜索品牌(管理员)")
+    public Object searchBrand(){return new Object();}
+
+
+    @PostMapping("brands")
+    @ApiOperation("添加品牌(管理员)")
+    public Object addBrand(@ApiParam(name="brand",value="品牌信息",required=true)  Object brand) {return new Object();}
+
+    @DeleteMapping("brands/{id}")
+    @ApiOperation("删除品牌(管理员)")
+    public Object deleteBrand(@ApiParam(name="id",value="品牌ID",required=true) @PathVariable("id") String id){return new Object();}
+
+    @PutMapping("brands/{brandId}")
+    @ApiOperation("修改品牌信息(管理员)")
+    public Object updateBrand(@ApiParam(name="id",value="品牌ID",required=true) @PathVariable("id") String id){return new Object();}
+
+   /*
+    *管理员分类
+    */
+   @PostMapping("categories")
+   @ApiOperation(value = "添加分类(管理员)")
+   public Object addCategory(@ApiParam(name="categotry",value="分类信息",required=true)  Object category){ return new Object(); }
+
+    @DeleteMapping("categories/{id}")
+    @ApiOperation(value = "删除特定分类(管理员)")
+    public Object deleteCategory(@ApiParam(name="id",value="分类ID",required=true) @PathVariable("id") String id){ return new Object(); }
+
+    @PutMapping("categories/{id}")
+    @ApiOperation(value = "修改特定分类(管理员)")
+    public Object updateCategory(@ApiParam(name="id",value="分类ID",required=true) @PathVariable("id") String id){ return new Object(); }
+
+    /*
+     * 管理员商品
+     */
+    @PostMapping("goods")
+    @ApiOperation(value = "添加商品(管理员)")
+    public Object addGoods(@ApiParam(name="goods",value="商品信息",required=true) Object goods){ return new Object(); }
+
+    @DeleteMapping("goods/{id}")
+    @ApiOperation(value = "删除商品(管理员)")
+    public Object deleteGoods(@ApiParam(name="id",value="商品ID",required=true) @PathVariable("id") String id){ return new Object(); }
+
+    @PutMapping("goods/{goodsId}")
+    @ApiOperation(value = "修改商品信息(管理员)")
+    public Object updateGoods(@ApiParam(name="id",value="商品ID",required=true) @PathVariable("id") String id,@ApiParam(name="goods",value="商品信息",required=true)  Object goods){ return new Object(); }
+
+    @PostMapping("goods/{id}/specification/")
+    @ApiOperation(value = "添加商品规格(管理员)")
+    public Object addSpecification(@ApiParam(name="id",value="商品ID",required=true) @PathVariable("id") String id,@ApiParam(name="goodsSpecification",value="商品规格信息",required=true)  Object goodsSpecification){ return new Object(); }
+
+    @DeleteMapping("goods/{goodsId}/specification/{specificationId}")
+    @ApiOperation(value = "删除商品规格(管理员)")
+    public Object deleteSpecification(@ApiParam(name="goodsId",value="商品ID",required=true) @PathVariable("goodsId") String goodsId,@ApiParam(name="specificationId",value="商品规格ID",required=true) @PathVariable("specificationId") String specificationId){ return new Object(); }
+
+    @PutMapping("goods/{goodsId}/specification/{specificationId}")
+    @ApiOperation(value = "修改商品规格信息(管理员)")
+    public Object updateSpecification(@ApiParam(name="goodsId",value="商品ID",required=true) @PathVariable("goodsId") String goodsId,@ApiParam(name="specificationId",value="商品规格ID",required=true) @PathVariable("specificationId") String specificationId){ return new Object(); }
 
 
 }

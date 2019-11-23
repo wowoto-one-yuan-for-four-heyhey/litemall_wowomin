@@ -16,13 +16,13 @@ public class PaymentService {
                                         )
     { return new Object(); }
 
-    @GetMapping("orders/{id}/payment-in/")
+    @GetMapping("orders/{id}/payment/")
     @ApiOperation("查看订单支付状态(内部接口，供orderService调用)")
     public Object getPaymentStatus(@ApiParam(name="id",value="订单ID",required=true)@PathVariable("id") String id)
     { return new Object(); }
 
-    @PutMapping("payment-in/{id}")
+    @PutMapping("payment/{id}")
     @ApiOperation("团购服务给用户退款(内部接口，供DiscountService调用)")
-    public Object giveBackGrouponRefund(@ApiParam(name="id",value="订单ID",required=true)@PathVariable("id") String id)
+    public Object giveBackGrouponRefund(@ApiParam(name="id",value="支付订单ID",required=true)@PathVariable("id") String id)
     { return new Object(); }
 }

@@ -61,11 +61,11 @@ public class OrderService {
 
 
 
-    @GetMapping("orders/shareOrders-in")
+    @GetMapping("orders/shareOrders")
     @ApiOperation(value = "获取分享订单（内部接口，供UserService使用）")
     public ArrayList<Object> getShareOrders(@ApiParam(name = "shareId", value="分享活动Id")String shareId){return new ArrayList<>();}
 
-    @GetMapping("orders/grouponOrders-in")
+    @GetMapping("orders/grouponOrders")
     @ApiOperation(value = "获取团购订单（内部接口，供DiscountService使用）")
     public ArrayList<Object> getGrouponOrders(@ApiParam(name="grouponId", value="团购活动Id")String grouponId){return new ArrayList<>();}
 }

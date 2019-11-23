@@ -15,18 +15,6 @@ public class GoodsService {
     /*
      * 获得商品
      */
-    @GetMapping("products-in/{productId}")
-    @ApiOperation("获得特定规格商品(内部接口, 给 OrderSevice , UserService 访问)")
-    public Object getProductForOthers(@ApiParam(name="productId",value="特定规格商品ID",required=true)
-                                 @PathVariable("productId") String productId){ return new Object();}
-
-    @GetMapping("goods-in/{goodsId}")
-    @ApiOperation("获得商品(内部接口, 给 TopicSevice , FootprintService 访问)")
-    public Object getGoodsForOthers(@ApiParam(name="goodsId",value="商品ID",required=true)
-                             @PathVariable("goodsId") String goodsId){ return new Object();}
-
-
-
 
     /*
      * 商品
@@ -35,11 +23,17 @@ public class GoodsService {
     @ApiOperation(value = "查看所有商品")
     public ArrayList<Object> getAllGoods(){ return new ArrayList<Object>(); }
     @GetMapping("goods/{id}")
-    @ApiOperation(value = "查看特定商品")
+    @ApiOperation(value = "查看特定商品(外部接口/内部接口，给 TopicSevice , FootprintService 访问)")
     public Object getOneGoods(@ApiParam(name="id",value="商品ID",required=true) @PathVariable("id") String id){ return new Object(); }
     @GetMapping("goods/search")
     @ApiOperation(value = "根据商品名称查看商品")
     public ArrayList<Object> getGoodsOfName(@ApiParam(name="name",value="商品名",required=true) String name) { return new ArrayList<Object>(); }
+    @GetMapping("products/{productId}")
+    @ApiOperation("获得特定规格商品(外部接口/内部接口, 给 OrderSevice , UserService 访问)")
+    public Object getProductForOthers(@ApiParam(name="productId",value="特定规格商品ID",required=true)
+                                      @PathVariable("productId") String productId){ return new Object();}
+
+
 
     /*
      * 品牌

@@ -33,15 +33,15 @@ public class OrderService {
     @ApiOperation("取消订单")
     public Object cancelOrder(@ApiParam(name="id",value="订单id",required=true)@PathVariable("id")String id){return new Object();}
 
-    @PostMapping("orders/{id}/customerService")
+    @PostMapping("/customerService/{orderItemId}")
     @ApiOperation("发起一项订单售后服务")
     public Object addOrderCustomerService(@ApiParam(name="id",value="订单id",required=true)@PathVariable("id")String id){return new Object();}
 
-    @GetMapping("orders/{id}/customerService")
+    @GetMapping("/customerService/{orderItemId}")
     @ApiOperation("查看订单下的对应售后服务")
     public Object getOrderCustomerService(@ApiParam(name="id",value="订单id",required=true)@PathVariable("id")String id){return new Object();}
 
-    @PutMapping("orders/{orderId}/customerService/{customerServiceId}")
+    @PutMapping("/customerService/{orderItemId}")
     @ApiOperation("推进一项订单售后服务")
     public Object updateOrderCustomerService(@ApiParam(name="orderId",value="订单id",required=true)@PathVariable("orderId")String orderId,@ApiParam(name="customerServiceId",value="售后id",required=true)@PathVariable("customerServiceId")String customerServiceId){return new Object();}
 
@@ -51,9 +51,6 @@ public class OrderService {
     @ApiOperation(value = "根据用户ID、订单ID、订单状态等信息查询所有订单(管理员)")
     public ArrayList<Object> getSearchGoods(@ApiParam(name="userId",value="用户ID")  Object userId,@ApiParam(name="orderId",value="订单ID")  Object id,@ApiParam(name="status",value="订单状态")  String status){return new ArrayList<>();}
 
-    @PutMapping("orders/{id}")
-    @ApiOperation(value = "修改特定订单(管理员)")
-    public Object updateOrder(@ApiParam(name="id",value="订单ID")  @PathVariable("id") Object orderId,@ApiParam(name="order",value="订单信息")  Object order){return new Object();}
 
     @DeleteMapping("orders/{id}")
     @ApiOperation(value = "删除特定订单(管理员)")
